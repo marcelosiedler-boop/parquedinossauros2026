@@ -1,0 +1,23 @@
+<%- include('../cabecalho')%>
+    <div>
+        <tr><a href="../especie"> ← Voltar </a></tr> 
+    <h3>Nova Espécie</h3>
+
+    <form method="post">
+        <p>Id da Espécie</p>
+        <input type="text" name="id" readonly value="<%=especie.id%>">
+        <br><br>
+        <p>Nome da Espécie</p>
+        <input type="text"  name="nome" value="<%=especie.nome%>">
+        <br><br>
+        <p>Período Geológico</p>
+        <input type="text" name="periodo" value="<%=especie.periodo%>">
+
+        <br><br>
+        <button type="submit">Salvar</button>
+        <button type="reset">Cancelar</button>
+    </form>
+    </div>
+
+</body>
+</html>

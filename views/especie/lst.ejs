@@ -1,0 +1,28 @@
+<%- include('../cabecalho')%>
+
+    <h3>Espécie de Dinossauros</h3>
+    <p>Gerencie as espécies de dinossauros no parque (apenas 2 campos por espécie)</p>
+    <a href="especie/add">+ Nova Espécie</a><br><br>
+    <form action="" method="post">
+        <input type="text" name="pesquisa" placeholder="digite a pesquisa... " >
+        <button type="submit">Pesquisar</button>
+    </form>
+    <table>
+        <tr>
+            <td><h3>Nome da Espécie     </h3></td>
+            <td><h3>Período Geológico   </h3></td>
+            <td><h3>Ação                </h3></td>
+        </tr>
+        <%especies.forEach(especie=>{%>
+        <tr>
+            <td><p>🦖 <%=especie.nome%></p></td>
+            <td><p>⏱️ <%=especie.periodo%></p></td>
+            <td>
+                    <a href="/especie/edt/<%=especie.id%>">✏️</a>
+                    <a href="/especie/del/<%=especie.id%>">🗑️</a>
+            </td>
+        </tr>
+        <%})%>
+    </table>
+</body>
+</html>
