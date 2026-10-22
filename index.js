@@ -85,12 +85,13 @@ app.post('/especie/edt/:id',  async (req, res) => {
 })
 
 app.get('/especie/add',  (req, res) => {
+
   res.render("especie/add");
 })
 //Rota POST pra gravar no Banco de Dados
 app.post('/especie/add',  async (req, res) => {
   const {nome,periodo} = req.body
- 
+  await Especie.create({nome, periodo})
   res.render("especie/add");
 })
 app.listen(PORT, () => {
